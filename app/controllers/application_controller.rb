@@ -9,5 +9,12 @@ class ApplicationController < ActionController::Base
   	end
 
   	@current_user
-  end  
+  end
+
+  def authorize_user
+  	unless current_user
+  		flash[:message] = 'Please log in or register'
+  		redirect_to '/signup_or_login'	
+    end  
+  end
 end

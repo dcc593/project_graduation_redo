@@ -1,5 +1,8 @@
 class ProfilesController < ApplicationController
-	def show
+	
+	before_action :authorize_user, only: [:show_for_user]
+
+	def show_for_user
 		if current_user.nil?
 			@name = "Ironhacker"
 		else

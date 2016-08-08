@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   post '/login' => 'users#create_for_login'
   delete '/logout' => 'users#destroy_for_logout'
 
-  get '/profiles' => 'profiles#show'
+  get '/profiles' => 'profiles#show_for_user'
 end
