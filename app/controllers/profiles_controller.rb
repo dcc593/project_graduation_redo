@@ -9,4 +9,9 @@ class ProfilesController < ApplicationController
 			@name = current_user.username		
 		end
 	end
+
+	def show_for_barber
+		
+		
+	end
 end
