@@ -11,44 +11,54 @@ class ProfilesController < ApplicationController
 	end
 
 	def show_for_barber
-		
+
 		if current_user.nil?
 			@name = "Ironhacker"
 		else
 			@name = current_user.username		
 		end
 
-		@photo = BarberHaircut.new(photo_params)
-	    if @photo.save
-	      flash[:success] = "The photo was added!"
-	    end
 
-	    @all_photos = BarberHaircut.order('created_at')
+		# Step #1: Show form
+		@photo = BarberHaircut.new
 
+		#this is for showing all the haircuts of the logged in barber
+	    @all_photos = BarberHaircut.where(user_id: current_user.id).order('created_at')
+	    # @all_photos = BarberHaircut.where(user_id: current_user.id, haircut: "").order('created_at')
+	    # @all_photos = current_user.barber_haircuts.order('created_at')
 	end
 
-	  # def index
-	  #   @photos = Barber_haircut.order('created_at')
-	  # end
+	def add_haircut
+		  	# Step #3: Processing form
+		@photo = BarberHaircut.new(photo_params)
+		@photo.user_id = current_user.id
+		if @photo.save
+		   flash[:success] = "The photo was added!"
+		   redirect_to "/profiles/barber"
+		else
+		   render 'show_for_barber'
+		end
+	end
 
-	  # def new
-	  #   @photo = Barber_haircut.new
-	  # end
+	def delete_haircut
+	  @photo = BarberHaircut.find(params[:])
+	  @photo.destroy
+	  flash[:success] = "The photo was destroyed."
+	  redirect_to 'show_for_barber'
+	end
 
-	  # def create
-	  #   @photo = Photo.new(photo_params)
-	  #   if @photo.save
-	  #     flash[:success] = "The photo was added!"
-	  #     redirect_to root_path
-	  #   else
-	  #     render 'new'
-	  #   end
-	  # end
+
 
 	  private
 
 	  def photo_params
-	    params.require(:barber_haircuts).permit(:image, :haircut)
+	  	 # Pizza -> pizza
+	  		  # ThreeWordModel -> three_word_model
+	  			
+	  	 #from the browser inspection of my html
+	  		  # <input name="barber_haircut[haircut]">
+	  		  # <input name="barber_haircut[image]">
+	  	params.require(:barber_haircut).permit(:image, :haircut)
 	  end
 
 
