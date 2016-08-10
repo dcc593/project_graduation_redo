@@ -1,12 +1,12 @@
 class ProfilesController < ApplicationController
-	
+
 	before_action :authorize_user, only: [:show_for_user]
 
 	def show_for_user
 		if current_user.nil?
 			@name = "Ironhacker"
 		else
-			@name = current_user.username		
+			@name = current_user.username
 		end
 	end
 
@@ -15,9 +15,8 @@ class ProfilesController < ApplicationController
 		if current_user.nil?
 			@name = "Ironhacker"
 		else
-			@name = current_user.username		
+			@name = current_user.username
 		end
-
 
 		# Step #1: Show form
 		@photo = BarberHaircut.new
@@ -40,25 +39,25 @@ class ProfilesController < ApplicationController
 		end
 	end
 
-	def delete_haircut
-	  @photo = BarberHaircut.find(params[:])
-	  @photo.destroy
-	  flash[:success] = "The photo was destroyed."
-	  redirect_to 'show_for_barber'
-	end
 
+	# def delete_haircut
+	#   @photo = BarberHaircut.find(params[:])
+	#   @photo.destroy
+	#   flash[:success] = "The photo was destroyed."
+	#   redirect_to 'show_for_barber'
+	# end
 
 
 	  private
 
 	  def photo_params
-	  	 # Pizza -> pizza
-	  		  # ThreeWordModel -> three_word_model
-	  			
-	  	 #from the browser inspection of my html
-	  		  # <input name="barber_haircut[haircut]">
-	  		  # <input name="barber_haircut[image]">
-	  	params.require(:barber_haircut).permit(:image, :haircut)
+
+	  	# Pizza -> pizza
+	  	# ThreeWordModel -> three_word_model
+
+	  	# <input name="barber_haircut[haircut]">
+	  	# <input name="barber_haircut[image]">
+	    params.require(:barber_haircut).permit(:image, :haircut)
 	  end
 
 
