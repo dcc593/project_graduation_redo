@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class HaircutTest < ActiveSupport::TestCase
+class BarberHaircutTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

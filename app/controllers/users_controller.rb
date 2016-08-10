@@ -20,11 +20,16 @@ class UsersController < ApplicationController
 
 	def create_for_login
 	    user = User.find_by(email: params[:email])
-	    if user && user.authenticate(params[:password])
+	    if user && user.authenticate(params[:password]) && (user.role == "user")
 	        session[:user_id] = user.id
-	        redirect_to '/profiles'
+	        redirect_to '/profiles/user'
 
 	    # ^^^^^this need to redirect_to the login profile when created
+
+		elsif user && user.authenticate(params[:password]) && (user.role == "barber")
+	        session[:user_id] = user.id
+	        redirect_to '/profiles/barber'
+
 	    else
 	      redirect_to '/signup_or_login'
 	    end
@@ -39,7 +44,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-	   params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
+	   params.require(:user).permit(:first_name, :last_name, :role, :username, :email, :password, :password_confirmation)
 	end
 
 end
