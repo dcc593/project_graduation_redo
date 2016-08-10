@@ -1,7 +1,7 @@
 <div class="page-header"><h1>Upload Photo</h1></div>
 
-<%= form_for @photo do |f| %>
- <!--  <%= render 'shared/errors', object: @photo %> -->
+ <!-- Step #2: Submit the form -->
+<%= form_for @photo, url: "/profiles/barber" do |f| %>
 
   <div class="form-group">
     <%= f.label :haircut %>
@@ -20,4 +20,5 @@
 
 <div class="page-header"><h1>Photos</h1></div>
 
-<%= render @all_photos %>
+<!-- Loop through this -->
+<%#= render @all_photos %>
