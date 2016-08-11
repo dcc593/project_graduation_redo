@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810162016) do
+ActiveRecord::Schema.define(version: 20160811142537) do
 
   create_table "barber_haircuts", force: :cascade do |t|
     t.string   "haircut"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20160810162016) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "day"
+    t.string   "time"
+    t.integer  "booking"
+    t.integer  "barber_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

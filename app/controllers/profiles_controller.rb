@@ -2,6 +2,8 @@ class ProfilesController < ApplicationController
 
 	before_action :authorize_user, only: [:show_for_user]
 
+# =========================================SHOWS========================================================
+
 	def show_for_user
 		if current_user.nil?
 			@name = "Ironhacker"
@@ -14,8 +16,10 @@ class ProfilesController < ApplicationController
 
 		if current_user.nil?
 			@name = "Ironhacker"
+			@email = " "
 		else
 			@name = current_user.username
+			@email = current_user.email
 		end
 
 		# Step #1: Show form
@@ -25,7 +29,25 @@ class ProfilesController < ApplicationController
 	    @all_photos = BarberHaircut.where(user_id: current_user.id).order('created_at')
 	    # @all_photos = BarberHaircut.where(user_id: current_user.id, haircut: "").order('created_at')
 	    # @all_photos = current_user.barber_haircuts.order('created_at')
+
+
+	    #this is for schedule 
+	    @tuesday_array= Schedule.where(barber_id: current_user.id, day: "Tuesday")
+	    @wednesday_array= Schedule.where(barber_id: current_user.id, day: "Wednesday")
+	    @thursday_array= Schedule.where(barber_id: current_user.id, day: "Thursday")
+	    @friday_array= Schedule.where(barber_id: current_user.id, day: "Friday")
+	    @saturday_array= Schedule.where(barber_id: current_user.id, day: "Saturday")
+	    @sunday_array= Schedule.where(barber_id: current_user.id, day: "Sunday")
 	end
+
+# =====================================SCHEDULING=========================================================
+
+	def schedule
+
+		
+	end
+
+# =====================================UPLOIND & DELETING PICTURE=========================================
 
 	def add_haircut
 		  	# Step #3: Processing form
@@ -50,6 +72,7 @@ class ProfilesController < ApplicationController
 	  
 	end
 
+# ==========================================================================================================
 
 	  private
 

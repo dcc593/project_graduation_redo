@@ -8,3 +8,4 @@
 
 
 User.create!(first_name: 'Jonathan', last_name: 'Rodriguez', username: 'jumbo', email: 'jumbo@gmail.com', role: 'barber', password: 'dcc', password_confirmation: 'dcc')
+
