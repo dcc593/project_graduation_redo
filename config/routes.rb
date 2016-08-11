@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/profiles/user' => 'profiles#show_for_user'
   get '/profiles/barber' => 'profiles#show_for_barber'
   post '/profiles/barber' => 'profiles#add_haircut'
+  delete '/profiles/:photo_id' => 'profiles#delete_haircut'
 
 
   # If this is an API, it needs to render JSON in the action

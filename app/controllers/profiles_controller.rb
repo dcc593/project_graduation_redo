@@ -40,12 +40,15 @@ class ProfilesController < ApplicationController
 	end
 
 
-	# def delete_haircut
-	#   @photo = BarberHaircut.find(params[:])
-	#   @photo.destroy
-	#   flash[:success] = "The photo was destroyed."
-	#   redirect_to 'show_for_barber'
-	# end
+	def delete_haircut
+		p "====================================="
+		p params[:photo_id]
+	  @photo = BarberHaircut.find(params[:photo_id])
+	  @photo.destroy
+	  flash[:success] = "The photo was destroyed."
+	  redirect_to "/profiles/barber"
+	  
+	end
 
 
 	  private
