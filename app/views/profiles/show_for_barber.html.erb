@@ -134,18 +134,18 @@
               </div>
 
               <div class= "col-sm-8">
-                <center>
-                  <% @all_photos.each do |eachPhoto| %>
+                <div>
                   <br>
-                  <span>
-                  <%= link_to image_tag(eachPhoto.image.url(:thumb), class: 'media-object'), eachPhoto.image.url, target: '_blank' %>
-                  </span>
-                  <span><%= link_to "Remove", "/profiles/#{eachPhoto.id}", class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+                  <% @all_photos.each do |eachPhoto| %>
+                  
+                  <%=image_tag(eachPhoto.image.url(:thumb), class: 'media-object')%>
+                  
+                  <%= link_to "Remove", "/profiles/#{eachPhoto.id}", class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
                     
-                  </span>
+              
                    <!-- <span><%= eachPhoto.id %></span> -->
                   <% end %>
-                </center>
+                </div>
               </div>
             </div>
   </div>
