@@ -5,13 +5,28 @@
 // =========================SITE PAGE============================
 .site-12 {
 	height: 100px;
-	border-style: solid;
+	background-image: image-url('background/hair-tools.jpg');
+	// border-style: solid;
 }
 .site-2,
 .site-8{
-	height: 500px;
-	border-style: solid;
+	background-color: #FFF5EE;
+	height: 568px;
+	
+	max-width: 100%;
+	max-height: 100%;
+	// border-style: solid;
 }
+.btn-site{
+	border-radius:5px;
+	height: 50px;
+	width: 125px;
+	background-color: #7FFFD4;
+	font-family: verdana;
+	   
+}
+
+
 
 // =========================REGISTRATION PAGE====================
 
@@ -19,9 +34,6 @@
 
 // =========================BARBER PAGE==========================
 
-.active-day {
-	border-radius: 25px;
-	background-color: #7FFFD4;
-}
+
 
 // background-color: lightgray;

@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   # If this is an API, it needs to render JSON in the action
   # post "/haircuts/like" => "blah#like"
+
+  patch '/profiles/barber/:barber_id/schedules/:id' => 'profiles#modify_booking'
 end

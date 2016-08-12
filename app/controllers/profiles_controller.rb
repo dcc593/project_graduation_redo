@@ -72,7 +72,18 @@ class ProfilesController < ApplicationController
 	  
 	end
 
-# ==========================================================================================================
+# ===========================================BOOKING======================================================
+
+def modify_booking
+	correct_schedule= Schedule.find_by(barber_id: params[:barber_id], id: params[:id])
+	if correct_schedule.update(booking: 0)
+		render json: correct_schedule
+		# im sending my correct_schedule as a response to the ajax 
+	end
+end
+
+
+# ========================================================================================================
 
 	  private
 

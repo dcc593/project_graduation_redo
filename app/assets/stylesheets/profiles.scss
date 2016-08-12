@@ -1,3 +1,19 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.active-day {
+	border-radius: 25px;
+	background-color: #7FFFD4;
+}
+.non-active-day {
+	border-radius: 25px;
+	background-color: #D3D3D3;
+}
+.schedule{
+	background-color:  	#000000;
+	border-radius: 5px;
+
+}
+.sch-text{
+	color: white;
+}

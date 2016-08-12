@@ -1,5 +1,5 @@
 
-<div class="container-fluid well span6">
+<div class="container-fluid well js-id" data-barber-id="<%=current_user.id%>">
   
   <div class= "row">
     <div class= "col-sm-2">
@@ -7,7 +7,8 @@
     <div class= "col-sm-8">
     </div>
     <div class= "col-sm-2">
-      <button><%= link_to "Log Out", "/logout", :method => :delete %></button>
+      
+      <button style= "float:right;"><%= link_to "Log Out", "/logout", :method => :delete %></button>
     </div>
   </div>
 
@@ -37,49 +38,73 @@
         </div> -->
       </div>
 
-      <div class= "col-sm-8">
-       <center><h2> SCHEDULE</h2></center>
+      <div class= "col-sm-8 schedule">
+       <center><h2 class = "sch-text"> SCHEDULE</h2></center>
           <div class= "row">
     
             <div class= "col-sm-2">
-              <center><h4> Tuesday</h4></center>             
+              <center><h4 class = "sch-text"> Tuesday</h4></center>             
                   <% @tuesday_array.each do |element| %>
-                    <div class= "tue-slot active-day"><center><h6><%= element.time %></h6></center></div>
+                    <% if element.booking == 1 %>
+                      <div class= "btn tue-slot active-day" data-schedule-id="<%=element.id%>"><center><h6><%= element.time %></h6></center></div>
+                    <% elsif element.booking == 0 %>
+                      <<div class= "tue-slot non-active-day"><center><h6><%= element.time %></h6></center></div>
+                    <% end %>
                   <% end %>              
             </div>
 
             <div class= "col-sm-2">
-              <center><h4> Wednesday</h4></center>               
+              <center><h4 class = "sch-text"> Wednesday</h4></center>               
                   <% @wednesday_array.each do |element| %>
-                    <div class= "wed-slot active-day"><center><h6><%= element.time %></h6></center></div>
+                    <% if element.booking == 1 %>
+                      <div class= "btn tue-slot active-day" data-schedule-id="<%=element.id%>"><center><h6><%= element.time %></h6></center></div>
+                    <% elsif element.booking == 0 %>
+                      <<div class= "tue-slot non-active-day"><center><h6><%= element.time %></h6></center></div>
+                    <% end %>
                   <% end %>                 
             </div>
 
             <div class= "col-sm-2">
-              <center><h4> Thursday</h4></center>                
+              <center><h4 class = "sch-text"> Thursday</h4></center>                
                   <% @thursday_array.each do |element| %>
-                    <div class= "thur-slot active-day"><center><h6><%= element.time %></h6></center></div>
+                    <% if element.booking == 1 %>
+                      <div class= "btn tue-slot active-day" data-schedule-id="<%=element.id%>"><center><h6><%= element.time %></h6></center></div>
+                    <% elsif element.booking == 0 %>
+                      <<div class= "tue-slot non-active-day"><center><h6><%= element.time %></h6></center></div>
+                    <% end %>
                   <% end %>                 
             </div>
 
             <div class= "col-sm-2">
-              <center><h4> Friday</h4></center>               
+              <center><h4 class = "sch-text"> Friday</h4></center>               
                 <% @friday_array.each do |element| %>
-                  <div class= "fri-slot active-day"><center><h6><%= element.time %></h6></center></div>
+                  <% if element.booking == 1 %>
+                    <div class= "btn tue-slot active-day" data-schedule-id="<%=element.id%>"><center><h6><%= element.time %></h6></center></div>
+                  <% elsif element.booking == 0 %>
+                    <<div class= "tue-slot non-active-day"><center><h6><%= element.time %></h6></center></div>
+                  <% end %>
                 <% end %>           
             </div>
 
             <div class= "col-sm-2">
-              <center><h4> Saturday</h4> </center>                  
+              <center><h4 class = "sch-text"> Saturday</h4> </center>                  
                     <% @saturday_array.each do |element| %>
-                      <div class= "sat-slot active-day"><center><h6><%= element.time %></h6></center></div>
+                      <% if element.booking == 1 %>
+                        <div class= "btn tue-slot active-day" data-schedule-id="<%=element.id%>"><center><h6><%= element.time %></h6></center></div>
+                      <% elsif element.booking == 0 %>
+                        <<div class= "tue-slot non-active-day"><center><h6><%= element.time %></h6></center></div>
+                      <% end %>
                     <% end %>
             </div>
 
             <div class= "col-sm-2">
-              <center><h4> Sunday</h4></center>                     
+              <center><h4 class = "sch-text"> Sunday</h4></center>                     
                   <% @sunday_array.each do |element| %>
-                     <div class= "sun-slot active-day"><center><h6><%= element.time %></h6></center></div>
+                     <% if element.booking == 1 %>
+                       <div class= "btn tue-slot active-day" data-schedule-id="<%=element.id%>"><center><h6><%= element.time %></h6></center></div>
+                     <% elsif element.booking == 0 %>
+                       <<div class= "tue-slot non-active-day"><center><h6><%= element.time %></h6></center></div>
+                     <% end %>
                   <% end %>
              </div>
             </div>
@@ -118,7 +143,7 @@
                   <span><%= link_to "Remove", "/profiles/#{eachPhoto.id}", class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
                     
                   </span>
-                   <span><%= eachPhoto.id %></span>
+                   <!-- <span><%= eachPhoto.id %></span> -->
                   <% end %>
                 </center>
               </div>
