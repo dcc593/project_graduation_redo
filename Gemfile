@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'pg', group: :production
 
+gem 'sprockets-es6'
+
 gem 'bcrypt', '~>3.1.7'
 gem 'bootstrap-sass'
 gem "paperclip", "~> 4.2"

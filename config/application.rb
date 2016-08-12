@@ -1,5 +1,10 @@
 require_relative 'boot'
 
+require "action_view/railtie"
+require "sprockets/railtie"
+# require "rails/test_unit/railtie"
+require 'sprockets/es6'
+
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
