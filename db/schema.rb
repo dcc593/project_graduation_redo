@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20160811142537) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "barber_haircuts", force: :cascade do |t|
     t.string   "haircut"
     t.datetime "created_at",         null: false
