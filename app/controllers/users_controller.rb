@@ -105,7 +105,7 @@ class UsersController < ApplicationController
 	def create_for_login
 	    user = User.find_by(email: params[:email])
 	    p user.inspect
-	    p params.inspect
+	     p params.inspect
 	    p "============================"
 	    if user && user.authenticate(params[:password]) && (user.role == "user")
 	        session[:user_id] = user.id
