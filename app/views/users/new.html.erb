@@ -1,36 +1,58 @@
 
-<h1>Sign up!</h1>
 
-<%= form_for :user, url: '/registration' do |f| %>
+  <div class = "row">
+    <div class = "col-sm-12 side"></div>
+  </div>
 
-  First Name: <%= f.text_field :first_name %>
-  Last Name: <%= f.text_field :last_name %>
-  Username: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
-  Role: <%= f.text_field :role %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <div class = "row">
 
+    <div class="col-sm-4">
+    </div>
 
- <!--  <select name="user[role]">
-      <option value="user">User</option>
-     <option value="barber">Barber</option>
-     </select> -->
+    <div class="col-sm-4 background-solid">
+        <center>
+          <h1>Sign up!</h1>
 
-  <%= f.submit "Submit" %>
+          <%= form_for :user, url: '/registration' do |f| %>
 
-<% end %>
+            <%= f.text_field :first_name, placeholder: "First Name" %><br>
+            <%= f.text_field :last_name, placeholder: "Last Name"  %><br>
+            <%= f.text_field :username, placeholder: "Username"  %><br>
+            <%= f.text_field :email, placeholder: "Email"  %><br>
+            <%= f.text_field :role, placeholder: "Role"  %><br>
+            <%= f.password_field :password, placeholder: "Password"  %><br>
+            <%= f.password_field :password_confirmation, placeholder: "Confirm Password"  %><br>
 
-<br>
+           <!--  <select name="user[role]">
+                <option value="user">User</option>
+               <option value="barber">Barber</option>
+               </select> -->
 
-<h1>Login</h1>
+            <%= f.submit "Submit" %>
+          <% end %>
 
-<%= form_tag '/login' do %>
-	Email: <%= text_field_tag :email %>
-	Password: <%= password_field_tag :password %>
-	<%= submit_tag "Log In" %>
-<% end %>
+          <br>
 
-<br>
+          <h1>Login</h1>
 
-<%= link_to "All profiles", "/users" %>
+          <%= form_for :user, url: '/login' do  |x| %>
+          	   <%= x.text_field :email, placeholder: "Email" %><br>
+               <%= x.password_field :password, placeholder: "Password" %><br>
+
+          	   <%= x.submit "Log In" %>
+          <% end %>
+
+          <br>
+
+          <%= link_to "All profiles", "/users" %>
+          
+        </center>
+      </div>
+    </div>
+
+      <div class="col-sm-4">
+      </div>
+
+    <div class = "row">
+    </div>
+

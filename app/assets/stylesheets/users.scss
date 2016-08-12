@@ -1,3 +1,38 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background-registration{
+
+	background-image: image-url('background/registration_barber.jpg');
+    // asset_path("registration_barber.jpg", image);
+    	background-repeat: no-repeat;
+    	  background-position: center;
+    	  background-attachment: fixed;      
+    	  webkit-background-size: cover;
+    	  -moz-background-size: cover;
+    	  -o-background-size: cover;
+    	  background-size: cover;
+     
+    }
+
+ .background-solid {
+
+ 	background-color: lightgray;
+ 	border-radius: 25px;
+ 	margin-top: 75px;
+ 	
+ 	// height: 100px;
+
+ }
+
+// html{
+// 	background-image: image-url('background/registration_barber.jpg');
+// 	background-repeat: no-repeat;
+// 	  background-position: center;
+// 	  background-attachment: fixed;      
+// 	  webkit-background-size: cover;
+// 	  -moz-background-size: cover;
+// 	  -o-background-size: cover;
+// 	  background-size: cover;
+// }

@@ -1,5 +1,16 @@
 
 <div class="container-fluid well span6">
+  
+  <div class= "row">
+    <div class= "col-sm-2">
+    </div>
+    <div class= "col-sm-8">
+    </div>
+    <div class= "col-sm-2">
+      <button><%= link_to "Log Out", "/logout", :method => :delete %></button>
+    </div>
+  </div>
+
   <div class="row-fluid">
     <div class= "col-sm-4">
         <div class="span2" >
@@ -12,7 +23,7 @@
             <h6><a href="#">More... </a></h6>
         </div>
         
-        <div class="span2">
+       <!--  <div class="span2">
             <div class="btn-group">
                 <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
                     Action 
@@ -23,7 +34,7 @@
                     <li><a href="#"><span class="icon-trash"></span> Delete</a></li>
                 </ul>
             </div>
-        </div>
+        </div> -->
       </div>
 
       <div class= "col-sm-8">
@@ -31,44 +42,44 @@
           <div class= "row">
     
             <div class= "col-sm-2">
-              <h4> Tuesday</h4>             
+              <center><h4> Tuesday</h4></center>             
                   <% @tuesday_array.each do |element| %>
-                    <div class= "tue-slot active-day"><h6><%= element.time %></h6></div>
+                    <div class= "tue-slot active-day"><center><h6><%= element.time %></h6></center></div>
                   <% end %>              
             </div>
 
             <div class= "col-sm-2">
-              <h4> Wednesday</h4>               
+              <center><h4> Wednesday</h4></center>               
                   <% @wednesday_array.each do |element| %>
-                    <div class= "wed-slot active-day"><h6><%= element.time %></h6></div>
+                    <div class= "wed-slot active-day"><center><h6><%= element.time %></h6></center></div>
                   <% end %>                 
             </div>
 
             <div class= "col-sm-2">
-              <h4> Thursday</h4>                
+              <center><h4> Thursday</h4></center>                
                   <% @thursday_array.each do |element| %>
-                    <div class= "thur-slot active-day"><h6><%= element.time %></h6></div>
+                    <div class= "thur-slot active-day"><center><h6><%= element.time %></h6></center></div>
                   <% end %>                 
             </div>
 
             <div class= "col-sm-2">
-              <h4> Friday</h4>               
+              <center><h4> Friday</h4></center>               
                 <% @friday_array.each do |element| %>
-                  <div class= "fri-slot active-day"><h6><%= element.time %></h6></div>
+                  <div class= "fri-slot active-day"><center><h6><%= element.time %></h6></center></div>
                 <% end %>           
             </div>
 
             <div class= "col-sm-2">
-                <h4> Saturday</h4>                   
+              <center><h4> Saturday</h4> </center>                  
                     <% @saturday_array.each do |element| %>
-                      <div class= "sat-slot active-day"><h6><%= element.time %></h6></div>
+                      <div class= "sat-slot active-day"><center><h6><%= element.time %></h6></center></div>
                     <% end %>
             </div>
 
             <div class= "col-sm-2">
-                <h4> Sunday</h4>                     
+              <center><h4> Sunday</h4></center>                     
                   <% @sunday_array.each do |element| %>
-                     <div class= "sun-slot active-day"><h6><%= element.time %></h6></div>
+                     <div class= "sun-slot active-day"><center><h6><%= element.time %></h6></center></div>
                   <% end %>
              </div>
             </div>
